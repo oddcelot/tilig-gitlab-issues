@@ -1,0 +1,31 @@
+#app {
+  --color-text: var(--color-text-dark);
+
+  @media (prefers-color-scheme: dark) {
+    --color-text: var(--color-text-light);
+  }
+
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  flex-direction: column;
+  height: 100%;
+
+  .Header {
+    position: sticky;
+    top: 0;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  footer {
+    position: sticky;
+    bottom: 0;
+    background: var(--color-background-alt);
+    color: var(--color-text-light);
+    display: grid;
+    place-items: center;
+    padding: 0.5rem 1rem;
+  }
+}

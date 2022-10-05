@@ -1,0 +1,7 @@
+.Header {
+  display: grid;
+  place-items: center;
+  grid-template-columns: min-content auto min-content;
+  color: var(--color-text);
+  background: var(--color-background-alt);
+}
