@@ -5,10 +5,10 @@ import style from "./Header.scss";
 const Header: Component = () => {
   return (
     <header class="Header" style={style}>
-      <span>Tilig</span>
+      <a class="home" href="/"><span>Tilig</span></a>
       <span>🦄 Welcome</span>
-      <nav>
-        <button>Menu</button>
+      <nav class="menu">
+        <button class="trigger" title="Open Menu">Menu</button>
       </nav>
     </header>
   );
