@@ -1,0 +1,47 @@
+.Issue {
+  border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: min-content auto;
+  overflow: hidden;
+  color: var(--color-text-light);
+  background-color: var(--color-brand);
+
+  &:focus-within {
+    outline: 1px dotted white;
+    outline-offset: 3px;
+  }
+
+  .emoji {
+    background: var(--color-background-alt);
+    border: none;
+    padding: 1rem;
+    display: grid;
+    place-items: center;
+    place-content: center;
+
+    &:hover, &:focus {
+      cursor: pointer;
+      opacity: 0.8;
+      outline: none;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  
+    font-size: 1rem;
+    min-height: 4em;
+    color: inherit;
+    text-decoration: none;
+
+    &:focus {
+      outline: none;
+      background: rgba(0,0,0,0.2);
+    }
+
+    .title {
+      font-weight: 600;
+    }
+  }
+}

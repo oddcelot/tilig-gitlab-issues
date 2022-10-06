@@ -6,6 +6,8 @@ import "./styles/index.scss";
 import "./styles/app.scss";
 
 import Header from "./components/Header/Header";
+import Issue from "./components/Issue/Issue";
+import { issues } from "./store/issues";
 
 export const fetchIssues = async (token: string) =>
   (
@@ -17,11 +19,6 @@ export const fetchIssues = async (token: string) =>
   ).json();
 
 const App: Component = () => {
-  const [issues, { mutate, refetch }] = createResource(
-    import.meta.env.OPEN_AUTH_TOKEN,
-    fetchIssues
-  );
-
   return (
     <>
       <Header />
@@ -29,9 +26,25 @@ const App: Component = () => {
         <h1>Gitlab Issues Emoji</h1>
         <section>
           <h2>Issues with milestone</h2>
+          <div class="issue-box">
+            {issues.loading && "Loading…"}
+            {issues()
+              ?.filter((issue) => issue.milestone !== null)
+              ?.map((issue) => (
+                <Issue {...issue} />
+              ))}
+          </div>
         </section>
         <section>
           <h2>Issues without milestone</h2>
+          <div class="issue-box">
+            {issues.loading && "Loading…"}
+            {issues()
+              ?.filter((issue) => issue.milestone === null)
+              ?.map((issue) => (
+                <Issue {...issue} />
+              ))}
+          </div>
         </section>
       </main>
       <footer>GitLab issues challenge</footer>
