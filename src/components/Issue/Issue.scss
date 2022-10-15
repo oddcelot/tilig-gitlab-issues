@@ -19,7 +19,8 @@
     place-items: center;
     place-content: center;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       cursor: pointer;
       opacity: 0.8;
       outline: none;
@@ -29,7 +30,7 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-  
+
     font-size: 1rem;
     min-height: 4em;
     color: inherit;
@@ -37,7 +38,7 @@
 
     &:focus {
       outline: none;
-      background: rgba(0,0,0,0.2);
+      background: rgba(0, 0, 0, 0.2);
     }
 
     .title {
